@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "AddFav";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<section class="content-header">
+    <h1>Add Fav Logo Title</h1>
+    <ul class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item "><a>Admin</a></li>
+        <li class="breadcrumb-item "><a>Fav Logo Title</a></li>
+        <li class="breadcrumb-item active"><a>Add Fav Logo Title</a></li>
+    </ul>
+</section>
+<br />
+<div class="card-footer">
+    <button type="submit" class=" btn btn-primary" onclick="window.location.href='/Admin/Fav/FavList'">Fav Logo Title List</button>
+</div>
+<section class="content">
+    <div class="row">
+        <div class="col-md-9">
+            @Html.Partial("~/Areas/Admin/Views/Shared/MessageForm.cshtml")
+            <div class=" box box-primary">
+                @using (Html.BeginForm("AddFav", "Fav", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                {
+                    @Html.Partial("Partial/FavForm")
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
